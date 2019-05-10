@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Album Retrofit</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="sort_az">Sort A-Z</string>
 </resources>

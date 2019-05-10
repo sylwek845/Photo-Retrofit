@@ -1,5 +1,7 @@
 package com.example.albumretrofit.injection.module
 
+import com.example.albumretrofit.injection.api.AlbumApi
+import com.example.albumretrofit.injection.api.PhotoApi
 import com.example.albumretrofit.utils.BaseConst.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides
@@ -20,7 +22,19 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 // Safe here as we are dealing with a Dagger 2 module
 @Suppress("unused")
 object NetworkModule {
-    //TODO
+    @Provides
+    @Reusable
+    @JvmStatic
+    internal fun provideAlbumApi(retrofit: Retrofit): AlbumApi {
+        return retrofit.create(AlbumApi::class.java)
+    }
+
+    @Provides
+    @Reusable
+    @JvmStatic
+    internal fun providePhotoApi(retrofit: Retrofit): PhotoApi {
+        return retrofit.create(PhotoApi::class.java)
+    }
     /**
      * Provides the Retrofit object.
      * @return the Retrofit object

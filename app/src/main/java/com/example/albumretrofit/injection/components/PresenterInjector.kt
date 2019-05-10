@@ -3,6 +3,8 @@ package com.example.albumretrofit.injection.components
 import com.example.albumretrofit.base.BaseView
 import com.example.albumretrofit.injection.module.ContextModule
 import com.example.albumretrofit.injection.module.NetworkModule
+import com.example.albumretrofit.ui.album.AlbumPresenter
+import com.example.albumretrofit.ui.photo.PhotoPresenter
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
@@ -21,7 +23,9 @@ interface PresenterInjector {
      * Injects required dependencies into the specified PostPresenter.
      *
      */
-   //TODO Injects
+    fun inject(albumPresenter: AlbumPresenter)
+
+    fun inject(photoPresenter: PhotoPresenter)
 
     @Component.Builder
     interface Builder {

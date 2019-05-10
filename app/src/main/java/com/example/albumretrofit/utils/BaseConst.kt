@@ -7,5 +7,6 @@ package com.example.albumretrofit.utils
 class BaseConst {
     companion object{
         const val BASE_URL: String = "https://jsonplaceholder.typicode.com"
+        const val ALBUM_ID: String = "albumID"
     }
 }
